@@ -14,13 +14,13 @@ class AclResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String activityId, String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String activityId, core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/acl/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (userId == null) paramErrors.add("userId is required");
@@ -59,13 +59,13 @@ class ActivitiesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String activityId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String activityId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (optParams != null) {
@@ -110,13 +110,13 @@ class ActivitiesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ActivityList> list(String userId, String collection, {String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<ActivityList> list(core.String userId, core.String collection, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "people/{userId}/activities/{collection}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (collection == null) paramErrors.add("collection is required");
     if (collection != null && !["all", "scraps", "stream"].contains(collection)) {
       paramErrors.add("Allowed values for collection: all, scraps, stream");
@@ -161,13 +161,13 @@ class ActivityVisibilityResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Visibility> get(String activityId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Visibility> get(core.String activityId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/visibility";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (optParams != null) {
@@ -200,13 +200,13 @@ class ActivityVisibilityResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Visibility> patch(Visibility request, String activityId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Visibility> patch(Visibility request, core.String activityId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/visibility";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (optParams != null) {
@@ -239,13 +239,13 @@ class ActivityVisibilityResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Visibility> update(Visibility request, String activityId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Visibility> update(Visibility request, core.String activityId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/visibility";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (optParams != null) {
@@ -284,13 +284,13 @@ class BadgesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Badge> get(String userId, String badgeId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Badge> get(core.String userId, core.String badgeId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "people/{userId}/badges/{badgeId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (badgeId == null) paramErrors.add("badgeId is required");
     if (badgeId != null) urlParams["badgeId"] = badgeId;
     if (userId == null) paramErrors.add("userId is required");
@@ -323,13 +323,13 @@ class BadgesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BadgeList> list(String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BadgeList> list(core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "people/{userId}/badges";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (userId == null) paramErrors.add("userId is required");
     if (userId != null) urlParams["userId"] = userId;
     if (optParams != null) {
@@ -366,13 +366,13 @@ class CommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String commentId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String commentId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "comments/{commentId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (commentId == null) paramErrors.add("commentId is required");
     if (commentId != null) urlParams["commentId"] = commentId;
     if (optParams != null) {
@@ -405,13 +405,13 @@ class CommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Comment> get(String commentId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Comment> get(core.String commentId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "comments/{commentId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (commentId == null) paramErrors.add("commentId is required");
     if (commentId != null) urlParams["commentId"] = commentId;
     if (hl != null) queryParams["hl"] = hl;
@@ -445,13 +445,13 @@ class CommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Comment> insert(Comment request, String activityId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Comment> insert(Comment request, core.String activityId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/comments";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (optParams != null) {
@@ -495,13 +495,13 @@ class CommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommentList> list(String activityId, {String hl, int maxResults, String orderBy, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommentList> list(core.String activityId, {core.String hl, core.int maxResults, core.String orderBy, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/{activityId}/comments";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (activityId == null) paramErrors.add("activityId is required");
     if (activityId != null) urlParams["activityId"] = activityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -547,13 +547,13 @@ class CommunitiesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Community> get(int communityId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Community> get(core.int communityId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -595,13 +595,13 @@ class CommunitiesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityList> list(String userId, {String hl, int maxResults, String orderBy, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityList> list(core.String userId, {core.String hl, core.int maxResults, core.String orderBy, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "people/{userId}/communities";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (hl != null) queryParams["hl"] = hl;
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (orderBy != null && !["id", "ranked"].contains(orderBy)) {
@@ -646,13 +646,13 @@ class CommunityFollowResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(int communityId, String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.int communityId, core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/followers/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (userId == null) paramErrors.add("userId is required");
@@ -687,13 +687,13 @@ class CommunityFollowResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMembers> insert(int communityId, String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMembers> insert(core.int communityId, core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/followers/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (userId == null) paramErrors.add("userId is required");
@@ -734,13 +734,13 @@ class CommunityMembersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(int communityId, String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.int communityId, core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/members/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (userId == null) paramErrors.add("userId is required");
@@ -777,13 +777,13 @@ class CommunityMembersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMembers> get(int communityId, String userId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMembers> get(core.int communityId, core.String userId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/members/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -819,13 +819,13 @@ class CommunityMembersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMembers> insert(int communityId, String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMembers> insert(core.int communityId, core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/members/{userId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (userId == null) paramErrors.add("userId is required");
@@ -867,13 +867,13 @@ class CommunityMembersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMembersList> list(int communityId, {bool friendsOnly, String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMembersList> list(core.int communityId, {core.bool friendsOnly, core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/members";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (friendsOnly != null) queryParams["friendsOnly"] = friendsOnly;
@@ -918,13 +918,13 @@ class CommunityMessagesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(int communityId, String topicId, String messageId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.int communityId, core.String topicId, core.String messageId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages/{messageId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (messageId == null) paramErrors.add("messageId is required");
@@ -963,13 +963,13 @@ class CommunityMessagesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMessage> insert(CommunityMessage request, int communityId, String topicId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMessage> insert(CommunityMessage request, core.int communityId, core.String topicId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (topicId == null) paramErrors.add("topicId is required");
@@ -1012,13 +1012,13 @@ class CommunityMessagesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityMessageList> list(int communityId, String topicId, {String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityMessageList> list(core.int communityId, core.String topicId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1064,13 +1064,13 @@ class CommunityPollCommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityPollComment> insert(CommunityPollComment request, int communityId, String pollId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityPollComment> insert(CommunityPollComment request, core.int communityId, core.String pollId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/polls/{pollId}/comments";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (pollId == null) paramErrors.add("pollId is required");
@@ -1112,13 +1112,13 @@ class CommunityPollCommentsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityPollCommentList> list(int communityId, String pollId, {String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityPollCommentList> list(core.int communityId, core.String pollId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/polls/{pollId}/comments";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1164,13 +1164,13 @@ class CommunityPollVotesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityPollVote> insert(CommunityPollVote request, int communityId, String pollId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityPollVote> insert(CommunityPollVote request, core.int communityId, core.String pollId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/polls/{pollId}/votes";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (pollId == null) paramErrors.add("pollId is required");
@@ -1213,13 +1213,13 @@ class CommunityPollsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityPoll> get(int communityId, String pollId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityPoll> get(core.int communityId, core.String pollId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/polls/{pollId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1260,13 +1260,13 @@ class CommunityPollsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityPollList> list(int communityId, {String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityPollList> list(core.int communityId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/polls";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1308,13 +1308,13 @@ class CommunityRelatedResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityList> list(int communityId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityList> list(core.int communityId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/related";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1354,13 +1354,13 @@ class CommunityTopicsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(int communityId, String topicId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.int communityId, core.String topicId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (topicId == null) paramErrors.add("topicId is required");
@@ -1397,13 +1397,13 @@ class CommunityTopicsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityTopic> get(int communityId, String topicId, {String hl, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityTopic> get(core.int communityId, core.String topicId, {core.String hl, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1441,13 +1441,13 @@ class CommunityTopicsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityTopic> insert(CommunityTopic request, int communityId, {bool isShout, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityTopic> insert(CommunityTopic request, core.int communityId, {core.bool isShout, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (isShout != null) queryParams["isShout"] = isShout;
@@ -1487,13 +1487,13 @@ class CommunityTopicsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CommunityTopicList> list(int communityId, {String hl, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CommunityTopicList> list(core.int communityId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "communities/{communityId}/topics";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (communityId == null) paramErrors.add("communityId is required");
     if (communityId != null) urlParams["communityId"] = communityId;
     if (hl != null) queryParams["hl"] = hl;
@@ -1533,13 +1533,13 @@ class CountersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Counters> list(String userId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Counters> list(core.String userId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "people/{userId}/counters";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (userId == null) paramErrors.add("userId is required");
     if (userId != null) urlParams["userId"] = userId;
     if (optParams != null) {
@@ -1576,13 +1576,13 @@ class ScrapsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Activity> insert(Activity request, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Activity> insert(Activity request, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "activities/scraps";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (optParams != null) {
       optParams.forEach((key, value) {
         if (value != null && queryParams[key] == null) {

@@ -3,19 +3,19 @@ part of orkut_v2_api_client;
 class Acl {
 
   /** Human readable description of the access granted. */
-  String description;
+  core.String description;
 
   /** The list of ACL entries. */
-  List<AclItems> items;
+  core.List<AclItems> items;
 
   /** Identifies this resource as an access control list. Value: "orkut#acl" */
-  String kind;
+  core.String kind;
 
   /** The total count of participants of the parent resource. */
-  int totalParticipants;
+  core.int totalParticipants;
 
   /** Create new Acl from JSON data */
-  Acl.fromJson(Map json) {
+  Acl.fromJson(core.Map json) {
     if (json.containsKey("description")) {
       description = json["description"];
     }
@@ -34,14 +34,14 @@ class Acl {
   }
 
   /** Create JSON Object for Acl */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (description != null) {
       output["description"] = description;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -57,20 +57,20 @@ class Acl {
   }
 
   /** Return String representation of Acl */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class AclItems {
 
   /** The ID of the entity. For entities of type "person" or "circle", this is the ID of the resource. For other types, this will be unset. */
-  String id;
+  core.String id;
 
   /** The type of entity to whom access is granted. */
-  String type;
+  core.String type;
 
   /** Create new AclItems from JSON data */
-  AclItems.fromJson(Map json) {
+  AclItems.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -80,8 +80,8 @@ class AclItems {
   }
 
   /** Create JSON Object for AclItems */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
@@ -94,7 +94,7 @@ class AclItems {
   }
 
   /** Return String representation of AclItems */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -107,25 +107,25 @@ class Activity {
   OrkutAuthorResource actor;
 
   /** The ID for the activity. */
-  String id;
+  core.String id;
 
   /** The kind of activity. Always orkut#activity. */
-  String kind;
+  core.String kind;
 
   /** Links to resources related to this activity. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The activity's object. */
   ActivityObject object;
 
   /** The time at which the activity was initially published. */
-  String published;
+  core.String published;
 
   /** Title of the activity. */
-  String title;
+  core.String title;
 
   /** The time at which the activity was last updated. */
-  String updated;
+  core.String updated;
 
   /** This activity's verb, indicating what action was performed. Possible values are:  
 - add - User added new content to profile or album, e.g. video, photo. 
@@ -133,10 +133,10 @@ class Activity {
 - update - User commented on an activity. 
 - make-friend - User added a new friend. 
 - birthday - User has a birthday. */
-  String verb;
+  core.String verb;
 
   /** Create new Activity from JSON data */
-  Activity.fromJson(Map json) {
+  Activity.fromJson(core.Map json) {
     if (json.containsKey("access")) {
       access = new Acl.fromJson(json["access"]);
     }
@@ -173,8 +173,8 @@ class Activity {
   }
 
   /** Create JSON Object for Activity */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (access != null) {
       output["access"] = access.toJson();
@@ -189,7 +189,7 @@ class Activity {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -214,7 +214,7 @@ class Activity {
   }
 
   /** Return String representation of Activity */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -222,19 +222,19 @@ class Activity {
 class ActivityObject {
 
   /** The HTML-formatted content, suitable for display. When updating an activity's content, post the changes to this property, using the value of originalContent as a starting point. If the update is successful, the server adds HTML formatting and responds with this formatted content. */
-  String content;
+  core.String content;
 
   /** The list of additional items. */
-  List<OrkutActivityobjectsResource> items;
+  core.List<OrkutActivityobjectsResource> items;
 
   /** The type of the object affected by the activity. Clients can use this information to style the rendered activity object differently depending on the content. */
-  String objectType;
+  core.String objectType;
 
   /** Comments in reply to this activity. */
   ActivityObjectReplies replies;
 
   /** Create new ActivityObject from JSON data */
-  ActivityObject.fromJson(Map json) {
+  ActivityObject.fromJson(core.Map json) {
     if (json.containsKey("content")) {
       content = json["content"];
     }
@@ -253,14 +253,14 @@ class ActivityObject {
   }
 
   /** Create JSON Object for ActivityObject */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (content != null) {
       output["content"] = content;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -276,7 +276,7 @@ class ActivityObject {
   }
 
   /** Return String representation of ActivityObject */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -284,16 +284,16 @@ class ActivityObject {
 class ActivityObjectReplies {
 
   /** The list of comments. */
-  List<Comment> items;
+  core.List<Comment> items;
 
   /** Total number of comments. */
-  String totalItems;
+  core.String totalItems;
 
   /** URL for the collection of comments in reply to this activity. */
-  String url;
+  core.String url;
 
   /** Create new ActivityObjectReplies from JSON data */
-  ActivityObjectReplies.fromJson(Map json) {
+  ActivityObjectReplies.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -309,11 +309,11 @@ class ActivityObjectReplies {
   }
 
   /** Create JSON Object for ActivityObjectReplies */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -329,23 +329,23 @@ class ActivityObjectReplies {
   }
 
   /** Return String representation of ActivityObjectReplies */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ActivityList {
 
   /** List of activities retrieved. */
-  List<Activity> items;
+  core.List<Activity> items;
 
   /** Identifies this resource as a collection of activities. Value: "orkut#activityList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in activities.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new ActivityList from JSON data */
-  ActivityList.fromJson(Map json) {
+  ActivityList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -361,11 +361,11 @@ class ActivityList {
   }
 
   /** Create JSON Object for ActivityList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -381,41 +381,41 @@ class ActivityList {
   }
 
   /** Return String representation of ActivityList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Badge {
 
   /** The URL for the 64x64 badge logo. */
-  String badgeLargeLogo;
+  core.String badgeLargeLogo;
 
   /** The URL for the 24x24 badge logo. */
-  String badgeSmallLogo;
+  core.String badgeSmallLogo;
 
   /** The name of the badge, suitable for display. */
-  String caption;
+  core.String caption;
 
   /** The description for the badge, suitable for display. */
-  String description;
+  core.String description;
 
   /** The unique ID for the badge. */
-  String id;
+  core.String id;
 
   /** Identifies this resource as a badge. Value: "orkut#badge" */
-  String kind;
+  core.String kind;
 
   /** The URL for the 32x32 badge sponsor logo. */
-  String sponsorLogo;
+  core.String sponsorLogo;
 
   /** The name of the badge sponsor, suitable for display. */
-  String sponsorName;
+  core.String sponsorName;
 
   /** The URL for the badge sponsor. */
-  String sponsorUrl;
+  core.String sponsorUrl;
 
   /** Create new Badge from JSON data */
-  Badge.fromJson(Map json) {
+  Badge.fromJson(core.Map json) {
     if (json.containsKey("badgeLargeLogo")) {
       badgeLargeLogo = json["badgeLargeLogo"];
     }
@@ -446,8 +446,8 @@ class Badge {
   }
 
   /** Create JSON Object for Badge */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (badgeLargeLogo != null) {
       output["badgeLargeLogo"] = badgeLargeLogo;
@@ -481,20 +481,20 @@ class Badge {
   }
 
   /** Return String representation of Badge */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class BadgeList {
 
   /** List of badges retrieved. */
-  List<Badge> items;
+  core.List<Badge> items;
 
   /** Identifies this resource as a collection of badges. Value: "orkut#badgeList" */
-  String kind;
+  core.String kind;
 
   /** Create new BadgeList from JSON data */
-  BadgeList.fromJson(Map json) {
+  BadgeList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -507,11 +507,11 @@ class BadgeList {
   }
 
   /** Create JSON Object for BadgeList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -524,7 +524,7 @@ class BadgeList {
   }
 
   /** Return String representation of BadgeList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -534,25 +534,25 @@ class Comment {
   OrkutAuthorResource actor;
 
   /** The content of the comment in text/html */
-  String content;
+  core.String content;
 
   /** The unique ID for the comment. */
-  String id;
+  core.String id;
 
   /** Link to the original activity where this comment was posted. */
   CommentInReplyTo inReplyTo;
 
   /** Identifies this resource as a comment. Value: "orkut#comment" */
-  String kind;
+  core.String kind;
 
   /** List of resources for the comment. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The time the comment was initially published, in RFC 3339 format. */
-  String published;
+  core.String published;
 
   /** Create new Comment from JSON data */
-  Comment.fromJson(Map json) {
+  Comment.fromJson(core.Map json) {
     if (json.containsKey("actor")) {
       actor = new OrkutAuthorResource.fromJson(json["actor"]);
     }
@@ -580,8 +580,8 @@ class Comment {
   }
 
   /** Create JSON Object for Comment */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (actor != null) {
       output["actor"] = actor.toJson();
@@ -599,7 +599,7 @@ class Comment {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -612,7 +612,7 @@ class Comment {
   }
 
   /** Return String representation of Comment */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -620,19 +620,19 @@ class Comment {
 class CommentInReplyTo {
 
   /** Link to the post on activity stream being commented. */
-  String href;
+  core.String href;
 
   /** Unique identifier of the post on activity stream being commented. */
-  String ref;
+  core.String ref;
 
   /** Relationship between the comment and the post on activity stream being commented. Always inReplyTo. */
-  String rel;
+  core.String rel;
 
   /** Type of the post on activity stream being commented. Always text/html. */
-  String type;
+  core.String type;
 
   /** Create new CommentInReplyTo from JSON data */
-  CommentInReplyTo.fromJson(Map json) {
+  CommentInReplyTo.fromJson(core.Map json) {
     if (json.containsKey("href")) {
       href = json["href"];
     }
@@ -648,8 +648,8 @@ class CommentInReplyTo {
   }
 
   /** Create JSON Object for CommentInReplyTo */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (href != null) {
       output["href"] = href;
@@ -668,26 +668,26 @@ class CommentInReplyTo {
   }
 
   /** Return String representation of CommentInReplyTo */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommentList {
 
   /** List of comments retrieved. */
-  List<Comment> items;
+  core.List<Comment> items;
 
   /** Identifies this resource as a collection of comments. Value: "orkut#commentList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in comments.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in comments.list request to get the previous page, if there are more to retrieve. */
-  String previousPageToken;
+  core.String previousPageToken;
 
   /** Create new CommentList from JSON data */
-  CommentList.fromJson(Map json) {
+  CommentList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -706,11 +706,11 @@ class CommentList {
   }
 
   /** Create JSON Object for CommentList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -729,56 +729,56 @@ class CommentList {
   }
 
   /** Return String representation of CommentList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Community {
 
   /** The category of the community. */
-  String category;
+  core.String category;
 
   /** The co-owners of the community. */
-  List<OrkutAuthorResource> co_owners;
+  core.List<OrkutAuthorResource> co_owners;
 
   /** The time the community was created, in RFC 3339 format. */
-  String creation_date;
+  core.String creation_date;
 
   /** The description of the community. */
-  String description;
+  core.String description;
 
   /** The id of the community. */
-  int id;
+  core.int id;
 
   /** Identifies this resource as a community. Value: "orkut#community" */
-  String kind;
+  core.String kind;
 
   /** The official language of the community. */
-  String language;
+  core.String language;
 
   /** List of resources for the community. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The location of the community. */
-  String location;
+  core.String location;
 
   /** The number of users who are part of the community. This number may be approximate, so do not rely on it for iteration. */
-  int member_count;
+  core.int member_count;
 
   /** The list of moderators of the community. */
-  List<OrkutAuthorResource> moderators;
+  core.List<OrkutAuthorResource> moderators;
 
   /** The name of the community. */
-  String name;
+  core.String name;
 
   /** The person who owns the community. */
   OrkutAuthorResource owner;
 
   /** The photo of the community. */
-  String photo_url;
+  core.String photo_url;
 
   /** Create new Community from JSON data */
-  Community.fromJson(Map json) {
+  Community.fromJson(core.Map json) {
     if (json.containsKey("category")) {
       category = json["category"];
     }
@@ -833,14 +833,14 @@ class Community {
   }
 
   /** Create JSON Object for Community */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (category != null) {
       output["category"] = category;
     }
     if (co_owners != null) {
-      output["co_owners"] = new List();
+      output["co_owners"] = new core.List();
       co_owners.forEach((item) {
         output["co_owners"].add(item.toJson());
       });
@@ -861,7 +861,7 @@ class Community {
       output["language"] = language;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -873,7 +873,7 @@ class Community {
       output["member_count"] = member_count;
     }
     if (moderators != null) {
-      output["moderators"] = new List();
+      output["moderators"] = new core.List();
       moderators.forEach((item) {
         output["moderators"].add(item.toJson());
       });
@@ -892,20 +892,20 @@ class Community {
   }
 
   /** Return String representation of Community */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityList {
 
   /** List of communities retrieved. */
-  List<Community> items;
+  core.List<Community> items;
 
   /** Identifies this resource as a collection of communities. Value: "orkut#communityList" */
-  String kind;
+  core.String kind;
 
   /** Create new CommunityList from JSON data */
-  CommunityList.fromJson(Map json) {
+  CommunityList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -918,11 +918,11 @@ class CommunityList {
   }
 
   /** Create JSON Object for CommunityList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -935,7 +935,7 @@ class CommunityList {
   }
 
   /** Return String representation of CommunityList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -945,13 +945,13 @@ class CommunityMembers {
   CommunityMembershipStatus communityMembershipStatus;
 
   /** Kind of this item. Always orkut#communityMembers. */
-  String kind;
+  core.String kind;
 
   /** Description of the community member. */
   OrkutActivitypersonResource person;
 
   /** Create new CommunityMembers from JSON data */
-  CommunityMembers.fromJson(Map json) {
+  CommunityMembers.fromJson(core.Map json) {
     if (json.containsKey("communityMembershipStatus")) {
       communityMembershipStatus = new CommunityMembershipStatus.fromJson(json["communityMembershipStatus"]);
     }
@@ -964,8 +964,8 @@ class CommunityMembers {
   }
 
   /** Create JSON Object for CommunityMembers */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (communityMembershipStatus != null) {
       output["communityMembershipStatus"] = communityMembershipStatus.toJson();
@@ -981,32 +981,32 @@ class CommunityMembers {
   }
 
   /** Return String representation of CommunityMembers */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityMembersList {
 
   /** The value of pageToken query parameter in community_members.list request to get the first page. */
-  String firstPageToken;
+  core.String firstPageToken;
 
   /** List of community members retrieved. */
-  List<CommunityMembers> items;
+  core.List<CommunityMembers> items;
 
   /** Kind of this item. Always orkut#communityMembersList. */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in community_members.list request to get the last page. */
-  String lastPageToken;
+  core.String lastPageToken;
 
   /** The value of pageToken query parameter in community_members.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in community_members.list request to get the previous page, if there are more to retrieve. */
-  String prevPageToken;
+  core.String prevPageToken;
 
   /** Create new CommunityMembersList from JSON data */
-  CommunityMembersList.fromJson(Map json) {
+  CommunityMembersList.fromJson(core.Map json) {
     if (json.containsKey("firstPageToken")) {
       firstPageToken = json["firstPageToken"];
     }
@@ -1031,14 +1031,14 @@ class CommunityMembersList {
   }
 
   /** Create JSON Object for CommunityMembersList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (firstPageToken != null) {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1060,47 +1060,47 @@ class CommunityMembersList {
   }
 
   /** Return String representation of CommunityMembersList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityMembershipStatus {
 
   /** Whether the user can create a poll in this community. */
-  bool canCreatePoll;
+  core.bool canCreatePoll;
 
   /** Whether the user can create a topic in this community. */
-  bool canCreateTopic;
+  core.bool canCreateTopic;
 
   /** Whether the user can perform a shout operation in this community. */
-  bool canShout;
+  core.bool canShout;
 
   /** Whether the session user is a community co-owner. */
-  bool isCoOwner;
+  core.bool isCoOwner;
 
   /** Whether the user is following this community. */
-  bool isFollowing;
+  core.bool isFollowing;
 
   /** Whether the session user is a community moderator. */
-  bool isModerator;
+  core.bool isModerator;
 
   /** Whether the session user is the community owner. */
-  bool isOwner;
+  core.bool isOwner;
 
   /** Whether the restore operation is available for the community. */
-  bool isRestoreAvailable;
+  core.bool isRestoreAvailable;
 
   /** Whether the take-back operation is available for the community. */
-  bool isTakebackAvailable;
+  core.bool isTakebackAvailable;
 
   /** Kind of this item. Always orkut#communityMembershipStatus. */
-  String kind;
+  core.String kind;
 
   /** The status of the current link between the community and the user. */
-  String status;
+  core.String status;
 
   /** Create new CommunityMembershipStatus from JSON data */
-  CommunityMembershipStatus.fromJson(Map json) {
+  CommunityMembershipStatus.fromJson(core.Map json) {
     if (json.containsKey("canCreatePoll")) {
       canCreatePoll = json["canCreatePoll"];
     }
@@ -1137,8 +1137,8 @@ class CommunityMembershipStatus {
   }
 
   /** Create JSON Object for CommunityMembershipStatus */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (canCreatePoll != null) {
       output["canCreatePoll"] = canCreatePoll;
@@ -1178,38 +1178,38 @@ class CommunityMembershipStatus {
   }
 
   /** Return String representation of CommunityMembershipStatus */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityMessage {
 
   /** The timestamp of the date when the message was added, in RFC 3339 format. */
-  String addedDate;
+  core.String addedDate;
 
   /** The creator of the message. If ommited, the message is annonimous. */
   OrkutAuthorResource author;
 
   /** The body of the message. */
-  String body;
+  core.String body;
 
   /** The ID of the message. */
-  String id;
+  core.String id;
 
   /** Whether this post was marked as spam by the viewer, when he/she is not the community owner or one of its moderators. */
-  bool isSpam;
+  core.bool isSpam;
 
   /** Identifies this resource as a community message. Value: "orkut#communityMessage" */
-  String kind;
+  core.String kind;
 
   /** List of resources for the community message. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The subject of the message. */
-  String subject;
+  core.String subject;
 
   /** Create new CommunityMessage from JSON data */
-  CommunityMessage.fromJson(Map json) {
+  CommunityMessage.fromJson(core.Map json) {
     if (json.containsKey("addedDate")) {
       addedDate = json["addedDate"];
     }
@@ -1240,8 +1240,8 @@ class CommunityMessage {
   }
 
   /** Create JSON Object for CommunityMessage */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (addedDate != null) {
       output["addedDate"] = addedDate;
@@ -1262,7 +1262,7 @@ class CommunityMessage {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -1275,32 +1275,32 @@ class CommunityMessage {
   }
 
   /** Return String representation of CommunityMessage */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityMessageList {
 
   /** The value of pageToken query parameter in community_messages.list request to get the first page. */
-  String firstPageToken;
+  core.String firstPageToken;
 
   /** List of messages retrieved. */
-  List<CommunityMessage> items;
+  core.List<CommunityMessage> items;
 
   /** Identifies this resource as a collection of community messages. Value: "orkut#communityMessageList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in community_messages.list request to get the last page. */
-  String lastPageToken;
+  core.String lastPageToken;
 
   /** The value of pageToken query parameter in community_messages.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in community_messages.list request to get the previous page, if there are more to retrieve. */
-  String prevPageToken;
+  core.String prevPageToken;
 
   /** Create new CommunityMessageList from JSON data */
-  CommunityMessageList.fromJson(Map json) {
+  CommunityMessageList.fromJson(core.Map json) {
     if (json.containsKey("firstPageToken")) {
       firstPageToken = json["firstPageToken"];
     }
@@ -1325,14 +1325,14 @@ class CommunityMessageList {
   }
 
   /** Create JSON Object for CommunityMessageList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (firstPageToken != null) {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1354,7 +1354,7 @@ class CommunityMessageList {
   }
 
   /** Return String representation of CommunityMessageList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1364,70 +1364,70 @@ class CommunityPoll {
   OrkutAuthorResource author;
 
   /** The ID of the community. */
-  int communityId;
+  core.int communityId;
 
   /** The date of creation of this poll */
-  String creationTime;
+  core.String creationTime;
 
   /** The poll description. */
-  String description;
+  core.String description;
 
   /** The ending date of this poll or empty if the poll doesn't have one. */
-  String endingTime;
+  core.String endingTime;
 
   /** Whether the user has voted on this poll. */
-  bool hasVoted;
+  core.bool hasVoted;
 
   /** The poll ID. */
-  String id;
+  core.String id;
 
   /** The image representing the poll. Field is omitted if no image exists. */
   CommunityPollImage image;
 
   /** Whether the poll is not expired if there is an expiration date. A poll is open (that is, not closed for voting) if it either is not expired or doesn't have an expiration date at all. Note that just because a poll is open, it doesn't mean that the requester can vote on it. */
-  bool isClosed;
+  core.bool isClosed;
 
   /** Whether this poll allows voting for more than one option. */
-  bool isMultipleAnswers;
+  core.bool isMultipleAnswers;
 
   /** Whether this poll is still opened for voting. A poll is open for voting if it is not closed, the user has not yet voted on it and the user has the permission to do so, which happens if he/she is either a community member or the poll is open for everybody. */
-  bool isOpenForVoting;
+  core.bool isOpenForVoting;
 
   /** Whether this poll is restricted for members only. If a poll is open but the user can't vote on it, it's been restricted to members only. This information is important to tell this case apart from the one where the user can't vote simply because the poll is already closed. */
-  bool isRestricted;
+  core.bool isRestricted;
 
   /** Whether the user has marked this poll as spam. This only affects the poll for this user, not globally. */
-  bool isSpam;
+  core.bool isSpam;
 
   /** If user has already voted, whether his vote is publicly visible. */
-  bool isUsersVotePublic;
+  core.bool isUsersVotePublic;
 
   /** Whether non-members of the community can vote on the poll. */
-  bool isVotingAllowedForNonMembers;
+  core.bool isVotingAllowedForNonMembers;
 
   /** Identifies this resource as a community poll. Value: "orkut#communityPoll" */
-  String kind;
+  core.String kind;
 
   /** The date of the last update of this poll. */
-  String lastUpdate;
+  core.String lastUpdate;
 
   /** List of resources for the community poll. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** List of options of this poll. */
-  List<OrkutCommunitypolloptionResource> options;
+  core.List<OrkutCommunitypolloptionResource> options;
 
   /** The poll question. */
-  String question;
+  core.String question;
 
   /** The total number of votes this poll has received. */
-  int totalNumberOfVotes;
+  core.int totalNumberOfVotes;
 
   /** List of options the user has voted on, if there are any. */
-  List<int> votedOptions;
+  core.List<core.int> votedOptions;
 
   /** Create new CommunityPoll from JSON data */
-  CommunityPoll.fromJson(Map json) {
+  CommunityPoll.fromJson(core.Map json) {
     if (json.containsKey("author")) {
       author = new OrkutAuthorResource.fromJson(json["author"]);
     }
@@ -1506,8 +1506,8 @@ class CommunityPoll {
   }
 
   /** Create JSON Object for CommunityPoll */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (author != null) {
       output["author"] = author.toJson();
@@ -1561,13 +1561,13 @@ class CommunityPoll {
       output["lastUpdate"] = lastUpdate;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
     }
     if (options != null) {
-      output["options"] = new List();
+      output["options"] = new core.List();
       options.forEach((item) {
         output["options"].add(item.toJson());
       });
@@ -1579,7 +1579,7 @@ class CommunityPoll {
       output["totalNumberOfVotes"] = totalNumberOfVotes;
     }
     if (votedOptions != null) {
-      output["votedOptions"] = new List();
+      output["votedOptions"] = new core.List();
       votedOptions.forEach((item) {
         output["votedOptions"].add(item);
       });
@@ -1589,7 +1589,7 @@ class CommunityPoll {
   }
 
   /** Return String representation of CommunityPoll */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1597,18 +1597,18 @@ class CommunityPoll {
 class CommunityPollImage {
 
   /** A URL that points to an image of the poll. */
-  String url;
+  core.String url;
 
   /** Create new CommunityPollImage from JSON data */
-  CommunityPollImage.fromJson(Map json) {
+  CommunityPollImage.fromJson(core.Map json) {
     if (json.containsKey("url")) {
       url = json["url"];
     }
   }
 
   /** Create JSON Object for CommunityPollImage */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (url != null) {
       output["url"] = url;
@@ -1618,29 +1618,29 @@ class CommunityPollImage {
   }
 
   /** Return String representation of CommunityPollImage */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityPollComment {
 
   /** The date when the message was added, in RFC 3339 format. */
-  String addedDate;
+  core.String addedDate;
 
   /** The creator of the comment. */
   OrkutAuthorResource author;
 
   /** The body of the message. */
-  String body;
+  core.String body;
 
   /** The ID of the comment. */
-  int id;
+  core.int id;
 
   /** Identifies this resource as a community poll comment. Value: "orkut#communityPollComment" */
-  String kind;
+  core.String kind;
 
   /** Create new CommunityPollComment from JSON data */
-  CommunityPollComment.fromJson(Map json) {
+  CommunityPollComment.fromJson(core.Map json) {
     if (json.containsKey("addedDate")) {
       addedDate = json["addedDate"];
     }
@@ -1659,8 +1659,8 @@ class CommunityPollComment {
   }
 
   /** Create JSON Object for CommunityPollComment */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (addedDate != null) {
       output["addedDate"] = addedDate;
@@ -1682,32 +1682,32 @@ class CommunityPollComment {
   }
 
   /** Return String representation of CommunityPollComment */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityPollCommentList {
 
   /** The value of pageToken query parameter in community_poll_comments.list request to get the first page. */
-  String firstPageToken;
+  core.String firstPageToken;
 
   /** List of community poll comments retrieved. */
-  List<CommunityPollComment> items;
+  core.List<CommunityPollComment> items;
 
   /** Identifies this resource as a collection of community poll comments. Value: "orkut#CommunityPollCommentList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in community_poll_comments.list request to get the last page. */
-  String lastPageToken;
+  core.String lastPageToken;
 
   /** The value of pageToken query parameter in community_poll_comments.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in community_poll_comments.list request to get the previous page, if there are more to retrieve. */
-  String prevPageToken;
+  core.String prevPageToken;
 
   /** Create new CommunityPollCommentList from JSON data */
-  CommunityPollCommentList.fromJson(Map json) {
+  CommunityPollCommentList.fromJson(core.Map json) {
     if (json.containsKey("firstPageToken")) {
       firstPageToken = json["firstPageToken"];
     }
@@ -1732,14 +1732,14 @@ class CommunityPollCommentList {
   }
 
   /** Create JSON Object for CommunityPollCommentList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (firstPageToken != null) {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1761,32 +1761,32 @@ class CommunityPollCommentList {
   }
 
   /** Return String representation of CommunityPollCommentList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityPollList {
 
   /** The value of pageToken query parameter in community_polls.list request to get the first page. */
-  String firstPageToken;
+  core.String firstPageToken;
 
   /** List of community polls retrieved. */
-  List<CommunityPoll> items;
+  core.List<CommunityPoll> items;
 
   /** Identifies this resource as a collection of community polls. Value: "orkut#communityPollList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in community_polls.list request to get the last page. */
-  String lastPageToken;
+  core.String lastPageToken;
 
   /** The value of pageToken query parameter in community_polls.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in community_polls.list request to get the previous page, if there are more to retrieve. */
-  String prevPageToken;
+  core.String prevPageToken;
 
   /** Create new CommunityPollList from JSON data */
-  CommunityPollList.fromJson(Map json) {
+  CommunityPollList.fromJson(core.Map json) {
     if (json.containsKey("firstPageToken")) {
       firstPageToken = json["firstPageToken"];
     }
@@ -1811,14 +1811,14 @@ class CommunityPollList {
   }
 
   /** Create JSON Object for CommunityPollList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (firstPageToken != null) {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1840,23 +1840,23 @@ class CommunityPollList {
   }
 
   /** Return String representation of CommunityPollList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityPollVote {
 
   /** Whether this vote is visible to other users or not. */
-  bool isVotevisible;
+  core.bool isVotevisible;
 
   /** Identifies this resource as a community poll vote. Value: "orkut#communityPollVote" */
-  String kind;
+  core.String kind;
 
   /** The ids of the voted options. */
-  List<int> optionIds;
+  core.List<core.int> optionIds;
 
   /** Create new CommunityPollVote from JSON data */
-  CommunityPollVote.fromJson(Map json) {
+  CommunityPollVote.fromJson(core.Map json) {
     if (json.containsKey("isVotevisible")) {
       isVotevisible = json["isVotevisible"];
     }
@@ -1872,8 +1872,8 @@ class CommunityPollVote {
   }
 
   /** Create JSON Object for CommunityPollVote */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (isVotevisible != null) {
       output["isVotevisible"] = isVotevisible;
@@ -1882,7 +1882,7 @@ class CommunityPollVote {
       output["kind"] = kind;
     }
     if (optionIds != null) {
-      output["optionIds"] = new List();
+      output["optionIds"] = new core.List();
       optionIds.forEach((item) {
         output["optionIds"].add(item);
       });
@@ -1892,7 +1892,7 @@ class CommunityPollVote {
   }
 
   /** Return String representation of CommunityPollVote */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1902,37 +1902,37 @@ class CommunityTopic {
   OrkutAuthorResource author;
 
   /** The body of the topic. */
-  String body;
+  core.String body;
 
   /** The ID of the topic. */
-  String id;
+  core.String id;
 
   /** Whether the topic is closed for new messages. */
-  bool isClosed;
+  core.bool isClosed;
 
   /** Identifies this resource as a community topic. Value: "orkut#communityTopic" */
-  String kind;
+  core.String kind;
 
   /** The timestamp of the last update, in RFC 3339 format. */
-  String lastUpdate;
+  core.String lastUpdate;
 
   /** Snippet of the last message posted on this topic. */
-  String latestMessageSnippet;
+  core.String latestMessageSnippet;
 
   /** List of resources for the community. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** Most recent messages. */
-  List<CommunityMessage> messages;
+  core.List<CommunityMessage> messages;
 
   /** The total number of replies this topic has received. */
-  int numberOfReplies;
+  core.int numberOfReplies;
 
   /** The title of the topic. */
-  String title;
+  core.String title;
 
   /** Create new CommunityTopic from JSON data */
-  CommunityTopic.fromJson(Map json) {
+  CommunityTopic.fromJson(core.Map json) {
     if (json.containsKey("author")) {
       author = new OrkutAuthorResource.fromJson(json["author"]);
     }
@@ -1975,8 +1975,8 @@ class CommunityTopic {
   }
 
   /** Create JSON Object for CommunityTopic */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (author != null) {
       output["author"] = author.toJson();
@@ -2000,13 +2000,13 @@ class CommunityTopic {
       output["latestMessageSnippet"] = latestMessageSnippet;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
     }
     if (messages != null) {
-      output["messages"] = new List();
+      output["messages"] = new core.List();
       messages.forEach((item) {
         output["messages"].add(item.toJson());
       });
@@ -2022,32 +2022,32 @@ class CommunityTopic {
   }
 
   /** Return String representation of CommunityTopic */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CommunityTopicList {
 
   /** The value of pageToken query parameter in community_topic.list request to get the first page. */
-  String firstPageToken;
+  core.String firstPageToken;
 
   /** List of topics retrieved. */
-  List<CommunityTopic> items;
+  core.List<CommunityTopic> items;
 
   /** Identifies this resource as a collection of community topics. Value: "orkut#communityTopicList" */
-  String kind;
+  core.String kind;
 
   /** The value of pageToken query parameter in community_topic.list request to get the last page. */
-  String lastPageToken;
+  core.String lastPageToken;
 
   /** The value of pageToken query parameter in community_topic.list request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The value of pageToken query parameter in community_topic.list request to get the previous page, if there are more to retrieve. */
-  String prevPageToken;
+  core.String prevPageToken;
 
   /** Create new CommunityTopicList from JSON data */
-  CommunityTopicList.fromJson(Map json) {
+  CommunityTopicList.fromJson(core.Map json) {
     if (json.containsKey("firstPageToken")) {
       firstPageToken = json["firstPageToken"];
     }
@@ -2072,14 +2072,14 @@ class CommunityTopicList {
   }
 
   /** Create JSON Object for CommunityTopicList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (firstPageToken != null) {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2101,20 +2101,20 @@ class CommunityTopicList {
   }
 
   /** Return String representation of CommunityTopicList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Counters {
 
   /** List of counters retrieved. */
-  List<OrkutCounterResource> items;
+  core.List<OrkutCounterResource> items;
 
   /** Identifies this resource as a collection of counters. Value: "orkut#counters" */
-  String kind;
+  core.String kind;
 
   /** Create new Counters from JSON data */
-  Counters.fromJson(Map json) {
+  Counters.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -2127,11 +2127,11 @@ class Counters {
   }
 
   /** Create JSON Object for Counters */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2144,7 +2144,7 @@ class Counters {
   }
 
   /** Return String representation of Counters */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2154,25 +2154,25 @@ class OrkutActivityobjectsResource {
   Community community;
 
   /** The HTML-formatted content, suitable for display. When updating an activity's content, post the changes to this property, using the value of originalContent as a starting point. If the update is successful, the server adds HTML formatting and responds with this formatted content. */
-  String content;
+  core.String content;
 
   /** The title of the object. */
-  String displayName;
+  core.String displayName;
 
   /** The ID for the object. */
-  String id;
+  core.String id;
 
   /** Links to other resources related to this object. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The object type. */
-  String objectType;
+  core.String objectType;
 
   /** The person who is related with this activity, e.g. an Added User. */
   OrkutActivitypersonResource person;
 
   /** Create new OrkutActivityobjectsResource from JSON data */
-  OrkutActivityobjectsResource.fromJson(Map json) {
+  OrkutActivityobjectsResource.fromJson(core.Map json) {
     if (json.containsKey("community")) {
       community = new Community.fromJson(json["community"]);
     }
@@ -2200,8 +2200,8 @@ class OrkutActivityobjectsResource {
   }
 
   /** Create JSON Object for OrkutActivityobjectsResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (community != null) {
       output["community"] = community.toJson();
@@ -2216,7 +2216,7 @@ class OrkutActivityobjectsResource {
       output["id"] = id;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -2232,20 +2232,20 @@ class OrkutActivityobjectsResource {
   }
 
   /** Return String representation of OrkutActivityobjectsResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class OrkutActivitypersonResource {
 
   /** The person's date of birth, represented as YYYY-MM-DD. */
-  String birthday;
+  core.String birthday;
 
   /** The person's gender. Values include "male", "female", and "other". */
-  String gender;
+  core.String gender;
 
   /** The person's opensocial ID. */
-  String id;
+  core.String id;
 
   /** The person's profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields. */
   OrkutActivitypersonResourceImage image;
@@ -2254,10 +2254,10 @@ class OrkutActivitypersonResource {
   OrkutActivitypersonResourceName name;
 
   /** The person's profile url. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields. */
-  String url;
+  core.String url;
 
   /** Create new OrkutActivitypersonResource from JSON data */
-  OrkutActivitypersonResource.fromJson(Map json) {
+  OrkutActivitypersonResource.fromJson(core.Map json) {
     if (json.containsKey("birthday")) {
       birthday = json["birthday"];
     }
@@ -2279,8 +2279,8 @@ class OrkutActivitypersonResource {
   }
 
   /** Create JSON Object for OrkutActivitypersonResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (birthday != null) {
       output["birthday"] = birthday;
@@ -2305,7 +2305,7 @@ class OrkutActivitypersonResource {
   }
 
   /** Return String representation of OrkutActivitypersonResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2313,13 +2313,13 @@ class OrkutActivitypersonResource {
 class OrkutActivitypersonResourceName {
 
   /** The family name (last name) of this person. */
-  String familyName;
+  core.String familyName;
 
   /** The given name (first name) of this person. */
-  String givenName;
+  core.String givenName;
 
   /** Create new OrkutActivitypersonResourceName from JSON data */
-  OrkutActivitypersonResourceName.fromJson(Map json) {
+  OrkutActivitypersonResourceName.fromJson(core.Map json) {
     if (json.containsKey("familyName")) {
       familyName = json["familyName"];
     }
@@ -2329,8 +2329,8 @@ class OrkutActivitypersonResourceName {
   }
 
   /** Create JSON Object for OrkutActivitypersonResourceName */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (familyName != null) {
       output["familyName"] = familyName;
@@ -2343,7 +2343,7 @@ class OrkutActivitypersonResourceName {
   }
 
   /** Return String representation of OrkutActivitypersonResourceName */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2351,18 +2351,18 @@ class OrkutActivitypersonResourceName {
 class OrkutActivitypersonResourceImage {
 
   /** The URL of the person's profile photo. */
-  String url;
+  core.String url;
 
   /** Create new OrkutActivitypersonResourceImage from JSON data */
-  OrkutActivitypersonResourceImage.fromJson(Map json) {
+  OrkutActivitypersonResourceImage.fromJson(core.Map json) {
     if (json.containsKey("url")) {
       url = json["url"];
     }
   }
 
   /** Create JSON Object for OrkutActivitypersonResourceImage */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (url != null) {
       output["url"] = url;
@@ -2372,26 +2372,26 @@ class OrkutActivitypersonResourceImage {
   }
 
   /** Return String representation of OrkutActivitypersonResourceImage */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class OrkutAuthorResource {
 
   /** The name of the author, suitable for display. */
-  String displayName;
+  core.String displayName;
 
   /** Unique identifier of the person who posted the comment. This is the person's OpenSocial ID. */
-  String id;
+  core.String id;
 
   /** Image data about the author. */
   OrkutAuthorResourceImage image;
 
   /** The URL of the author who posted the comment [not yet implemented] */
-  String url;
+  core.String url;
 
   /** Create new OrkutAuthorResource from JSON data */
-  OrkutAuthorResource.fromJson(Map json) {
+  OrkutAuthorResource.fromJson(core.Map json) {
     if (json.containsKey("displayName")) {
       displayName = json["displayName"];
     }
@@ -2407,8 +2407,8 @@ class OrkutAuthorResource {
   }
 
   /** Create JSON Object for OrkutAuthorResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (displayName != null) {
       output["displayName"] = displayName;
@@ -2427,7 +2427,7 @@ class OrkutAuthorResource {
   }
 
   /** Return String representation of OrkutAuthorResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2435,18 +2435,18 @@ class OrkutAuthorResource {
 class OrkutAuthorResourceImage {
 
   /** A URL that points to a thumbnail photo of the author. */
-  String url;
+  core.String url;
 
   /** Create new OrkutAuthorResourceImage from JSON data */
-  OrkutAuthorResourceImage.fromJson(Map json) {
+  OrkutAuthorResourceImage.fromJson(core.Map json) {
     if (json.containsKey("url")) {
       url = json["url"];
     }
   }
 
   /** Create JSON Object for OrkutAuthorResourceImage */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (url != null) {
       output["url"] = url;
@@ -2456,26 +2456,26 @@ class OrkutAuthorResourceImage {
   }
 
   /** Return String representation of OrkutAuthorResourceImage */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class OrkutCommunitypolloptionResource {
 
   /** The option description. */
-  String description;
+  core.String description;
 
   /** Image data about the poll option. Field is omitted if no image exists. */
   OrkutCommunitypolloptionResourceImage image;
 
   /** The total number of votes that this option received. */
-  int numberOfVotes;
+  core.int numberOfVotes;
 
   /** The poll option ID */
-  int optionId;
+  core.int optionId;
 
   /** Create new OrkutCommunitypolloptionResource from JSON data */
-  OrkutCommunitypolloptionResource.fromJson(Map json) {
+  OrkutCommunitypolloptionResource.fromJson(core.Map json) {
     if (json.containsKey("description")) {
       description = json["description"];
     }
@@ -2491,8 +2491,8 @@ class OrkutCommunitypolloptionResource {
   }
 
   /** Create JSON Object for OrkutCommunitypolloptionResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (description != null) {
       output["description"] = description;
@@ -2511,7 +2511,7 @@ class OrkutCommunitypolloptionResource {
   }
 
   /** Return String representation of OrkutCommunitypolloptionResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2519,18 +2519,18 @@ class OrkutCommunitypolloptionResource {
 class OrkutCommunitypolloptionResourceImage {
 
   /** A URL that points to an image of the poll question. */
-  String url;
+  core.String url;
 
   /** Create new OrkutCommunitypolloptionResourceImage from JSON data */
-  OrkutCommunitypolloptionResourceImage.fromJson(Map json) {
+  OrkutCommunitypolloptionResourceImage.fromJson(core.Map json) {
     if (json.containsKey("url")) {
       url = json["url"];
     }
   }
 
   /** Create JSON Object for OrkutCommunitypolloptionResourceImage */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (url != null) {
       output["url"] = url;
@@ -2540,7 +2540,7 @@ class OrkutCommunitypolloptionResourceImage {
   }
 
   /** Return String representation of OrkutCommunitypolloptionResourceImage */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2554,13 +2554,13 @@ class OrkutCounterResource {
 - photos - The photos of the user. 
 - videos - The videos of the user. 
 - pendingTestimonials - The pending testimonials of the user. */
-  String name;
+  core.String name;
 
   /** The number of resources on the counted collection. */
-  int total;
+  core.int total;
 
   /** Create new OrkutCounterResource from JSON data */
-  OrkutCounterResource.fromJson(Map json) {
+  OrkutCounterResource.fromJson(core.Map json) {
     if (json.containsKey("link")) {
       link = new OrkutLinkResource.fromJson(json["link"]);
     }
@@ -2573,8 +2573,8 @@ class OrkutCounterResource {
   }
 
   /** Create JSON Object for OrkutCounterResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (link != null) {
       output["link"] = link.toJson();
@@ -2590,7 +2590,7 @@ class OrkutCounterResource {
   }
 
   /** Return String representation of OrkutCounterResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2598,19 +2598,19 @@ class OrkutCounterResource {
 class OrkutLinkResource {
 
   /** URL of the link. */
-  String href;
+  core.String href;
 
   /** Relation between the resource and the parent object. */
-  String rel;
+  core.String rel;
 
   /** Title of the link. */
-  String title;
+  core.String title;
 
   /** Media type of the link. */
-  String type;
+  core.String type;
 
   /** Create new OrkutLinkResource from JSON data */
-  OrkutLinkResource.fromJson(Map json) {
+  OrkutLinkResource.fromJson(core.Map json) {
     if (json.containsKey("href")) {
       href = json["href"];
     }
@@ -2626,8 +2626,8 @@ class OrkutLinkResource {
   }
 
   /** Create JSON Object for OrkutLinkResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (href != null) {
       output["href"] = href;
@@ -2646,25 +2646,25 @@ class OrkutLinkResource {
   }
 
   /** Return String representation of OrkutLinkResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Visibility {
 
   /** Identifies this resource as a visibility item. Value: "orkut#visibility" */
-  String kind;
+  core.String kind;
 
   /** List of resources for the visibility item. */
-  List<OrkutLinkResource> links;
+  core.List<OrkutLinkResource> links;
 
   /** The visibility of the resource. Possible values are:  
 - default: not hidden by the user 
 - hidden: hidden */
-  String visibility;
+  core.String visibility;
 
   /** Create new Visibility from JSON data */
-  Visibility.fromJson(Map json) {
+  Visibility.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -2680,14 +2680,14 @@ class Visibility {
   }
 
   /** Create JSON Object for Visibility */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new List();
+      output["links"] = new core.List();
       links.forEach((item) {
         output["links"].add(item.toJson());
       });
@@ -2700,7 +2700,7 @@ class Visibility {
   }
 
   /** Return String representation of Visibility */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
