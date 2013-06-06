@@ -400,7 +400,7 @@ class Badge {
   core.String description;
 
   /** The unique ID for the badge. */
-  core.String id;
+  core.int id;
 
   /** Identifies this resource as a badge. Value: "orkut#badge" */
   core.String kind;
@@ -1194,7 +1194,7 @@ class CommunityMessage {
   core.String body;
 
   /** The ID of the message. */
-  core.String id;
+  core.int id;
 
   /** Whether this post was marked as spam by the viewer, when he/she is not the community owner or one of its moderators. */
   core.bool isSpam;
@@ -1905,7 +1905,7 @@ class CommunityTopic {
   core.String body;
 
   /** The ID of the topic. */
-  core.String id;
+  core.int id;
 
   /** Whether the topic is closed for new messages. */
   core.bool isClosed;

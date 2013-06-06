@@ -284,7 +284,7 @@ class BadgesResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Badge> get(core.String userId, core.String badgeId, {core.Map optParams}) {
+  async.Future<Badge> get(core.String userId, core.int badgeId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "people/{userId}/badges/{badgeId}";
     var urlParams = new core.Map();
@@ -918,7 +918,7 @@ class CommunityMessagesResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<core.Map> delete(core.int communityId, core.String topicId, core.String messageId, {core.Map optParams}) {
+  async.Future<core.Map> delete(core.int communityId, core.int topicId, core.int messageId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages/{messageId}";
     var urlParams = new core.Map();
@@ -963,7 +963,7 @@ class CommunityMessagesResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<CommunityMessage> insert(CommunityMessage request, core.int communityId, core.String topicId, {core.Map optParams}) {
+  async.Future<CommunityMessage> insert(CommunityMessage request, core.int communityId, core.int topicId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages";
     var urlParams = new core.Map();
@@ -1012,7 +1012,7 @@ class CommunityMessagesResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<CommunityMessageList> list(core.int communityId, core.String topicId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
+  async.Future<CommunityMessageList> list(core.int communityId, core.int topicId, {core.String hl, core.int maxResults, core.String pageToken, core.Map optParams}) {
     var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}/messages";
     var urlParams = new core.Map();
@@ -1354,7 +1354,7 @@ class CommunityTopicsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<core.Map> delete(core.int communityId, core.String topicId, {core.Map optParams}) {
+  async.Future<core.Map> delete(core.int communityId, core.int topicId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}";
     var urlParams = new core.Map();
@@ -1397,7 +1397,7 @@ class CommunityTopicsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<CommunityTopic> get(core.int communityId, core.String topicId, {core.String hl, core.Map optParams}) {
+  async.Future<CommunityTopic> get(core.int communityId, core.int topicId, {core.String hl, core.Map optParams}) {
     var completer = new async.Completer();
     var url = "communities/{communityId}/topics/{topicId}";
     var urlParams = new core.Map();

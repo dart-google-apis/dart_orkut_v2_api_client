@@ -94,7 +94,7 @@ class Orkut extends ConsoleClient {
 
   Orkut([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/orkut/v2/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _acl = new AclResource_(this);
     _activities = new ActivitiesResource_(this);
     _activityVisibility = new ActivityVisibilityResource_(this);
