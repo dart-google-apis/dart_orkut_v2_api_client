@@ -429,7 +429,11 @@ class Badge {
       description = json["description"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1220,7 +1224,11 @@ class CommunityMessage {
       body = json["body"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("isSpam")) {
       isSpam = json["isSpam"];
@@ -1940,7 +1948,11 @@ class CommunityTopic {
       body = json["body"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("isClosed")) {
       isClosed = json["isClosed"];
