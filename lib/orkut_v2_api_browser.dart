@@ -1,14 +1,20 @@
-library orkut_v2_api_browser;
+library orkut_v2_api.browser;
 
-import "orkut_v2_api_client.dart";
-export "orkut_v2_api_client.dart";
-
-import "dart:core" as core;
-import "dart:html" as html;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:js/js.dart" as js;
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-part "src/browser/browser_client.dart";
-part "src/browser/orkut.dart";
+import 'package:google_orkut_v2_api/src/cloud_api_browser.dart';
+import "package:google_orkut_v2_api/orkut_v2_api_client.dart";
+
+/** Lets you manage activities, comments and badges in Orkut. More stuff coming in time. */
+class Orkut extends Client with BrowserClient {
+
+  /** OAuth Scope2: Manage your Orkut activity */
+  static const String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
+
+  /** OAuth Scope2: View your Orkut data */
+  static const String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth/orkut.readonly";
+
+  final oauth.OAuth2 auth;
+
+  Orkut([oauth.OAuth2 this.auth]);
+}

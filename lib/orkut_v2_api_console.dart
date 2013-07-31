@@ -1,14 +1,21 @@
-library orkut_v2_api_console;
+library orkut_v2_api.console;
 
-import "orkut_v2_api_client.dart";
-export "orkut_v2_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/orkut.dart";
+import 'package:google_orkut_v2_api/src/cloud_api_console.dart';
+
+import "package:google_orkut_v2_api/orkut_v2_api_client.dart";
+
+/** Lets you manage activities, comments and badges in Orkut. More stuff coming in time. */
+class Orkut extends Client with ConsoleClient {
+
+  /** OAuth Scope2: Manage your Orkut activity */
+  static const String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
+
+  /** OAuth Scope2: View your Orkut data */
+  static const String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth/orkut.readonly";
+
+  final oauth2.OAuth2Console auth;
+
+  Orkut([oauth2.OAuth2Console this.auth]);
+}

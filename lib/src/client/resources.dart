@@ -1,9 +1,11 @@
-part of orkut_v2_api_client;
+part of orkut_v2_api;
 
-class AclResource_ extends Resource {
+class AclResource_ {
 
-  AclResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AclResource_(Client client) :
+      _client = client;
 
   /**
    * Excludes an element from the ACL of the activity.
@@ -42,10 +44,12 @@ class AclResource_ extends Resource {
   }
 }
 
-class ActivitiesResource_ extends Resource {
+class ActivitiesResource_ {
 
-  ActivitiesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ActivitiesResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes an existing activity, if the access controls allow it.
@@ -135,10 +139,12 @@ class ActivitiesResource_ extends Resource {
   }
 }
 
-class ActivityVisibilityResource_ extends Resource {
+class ActivityVisibilityResource_ {
 
-  ActivityVisibilityResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ActivityVisibilityResource_(Client client) :
+      _client = client;
 
   /**
    * Gets the visibility of an existing activity.
@@ -244,10 +250,12 @@ class ActivityVisibilityResource_ extends Resource {
   }
 }
 
-class BadgesResource_ extends Resource {
+class BadgesResource_ {
 
-  BadgesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  BadgesResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a badge from a user.
@@ -320,10 +328,12 @@ class BadgesResource_ extends Resource {
   }
 }
 
-class CommentsResource_ extends Resource {
+class CommentsResource_ {
 
-  CommentsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommentsResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes an existing comment.
@@ -482,10 +492,12 @@ class CommentsResource_ extends Resource {
   }
 }
 
-class CommunitiesResource_ extends Resource {
+class CommunitiesResource_ {
 
-  CommunitiesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunitiesResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves the basic information (aka. profile) of a community.
@@ -573,10 +585,12 @@ class CommunitiesResource_ extends Resource {
   }
 }
 
-class CommunityFollowResource_ extends Resource {
+class CommunityFollowResource_ {
 
-  CommunityFollowResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityFollowResource_(Client client) :
+      _client = client;
 
   /**
    * Removes a user from the followers of a community.
@@ -652,10 +666,12 @@ class CommunityFollowResource_ extends Resource {
   }
 }
 
-class CommunityMembersResource_ extends Resource {
+class CommunityMembersResource_ {
 
-  CommunityMembersResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityMembersResource_(Client client) :
+      _client = client;
 
   /**
    * Makes the user leave a community.
@@ -817,10 +833,12 @@ class CommunityMembersResource_ extends Resource {
   }
 }
 
-class CommunityMessagesResource_ extends Resource {
+class CommunityMessagesResource_ {
 
-  CommunityMessagesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityMessagesResource_(Client client) :
+      _client = client;
 
   /**
    * Moves a message of the community to the trash folder.
@@ -950,10 +968,12 @@ class CommunityMessagesResource_ extends Resource {
   }
 }
 
-class CommunityPollCommentsResource_ extends Resource {
+class CommunityPollCommentsResource_ {
 
-  CommunityPollCommentsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityPollCommentsResource_(Client client) :
+      _client = client;
 
   /**
    * Adds a comment on a community poll.
@@ -1042,10 +1062,12 @@ class CommunityPollCommentsResource_ extends Resource {
   }
 }
 
-class CommunityPollVotesResource_ extends Resource {
+class CommunityPollVotesResource_ {
 
-  CommunityPollVotesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityPollVotesResource_(Client client) :
+      _client = client;
 
   /**
    * Votes on a community poll.
@@ -1087,10 +1109,12 @@ class CommunityPollVotesResource_ extends Resource {
   }
 }
 
-class CommunityPollsResource_ extends Resource {
+class CommunityPollsResource_ {
 
-  CommunityPollsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityPollsResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves one specific poll of a community.
@@ -1176,10 +1200,12 @@ class CommunityPollsResource_ extends Resource {
   }
 }
 
-class CommunityRelatedResource_ extends Resource {
+class CommunityRelatedResource_ {
 
-  CommunityRelatedResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityRelatedResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves the communities related to another one.
@@ -1218,10 +1244,12 @@ class CommunityRelatedResource_ extends Resource {
   }
 }
 
-class CommunityTopicsResource_ extends Resource {
+class CommunityTopicsResource_ {
 
-  CommunityTopicsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CommunityTopicsResource_(Client client) :
+      _client = client;
 
   /**
    * Moves a topic of the community to the trash folder.
@@ -1382,10 +1410,12 @@ class CommunityTopicsResource_ extends Resource {
   }
 }
 
-class CountersResource_ extends Resource {
+class CountersResource_ {
 
-  CountersResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CountersResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves the counters of a user.
@@ -1421,10 +1451,12 @@ class CountersResource_ extends Resource {
   }
 }
 
-class ScrapsResource_ extends Resource {
+class ScrapsResource_ {
 
-  ScrapsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ScrapsResource_(Client client) :
+      _client = client;
 
   /**
    * Creates a new scrap.

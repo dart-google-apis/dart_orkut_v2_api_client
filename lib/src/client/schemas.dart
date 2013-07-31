@@ -1,4 +1,4 @@
-part of orkut_v2_api_client;
+part of orkut_v2_api;
 
 class Acl {
 
@@ -20,10 +20,7 @@ class Acl {
       description = json["description"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new AclItems.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new AclItems.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -41,10 +38,7 @@ class Acl {
       output["description"] = description;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -150,10 +144,7 @@ class Activity {
       kind = json["kind"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("object")) {
       object = new ActivityObject.fromJson(json["object"]);
@@ -189,10 +180,7 @@ class Activity {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (object != null) {
       output["object"] = object.toJson();
@@ -239,10 +227,7 @@ class ActivityObject {
       content = json["content"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new OrkutActivityobjectsResource.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new OrkutActivityobjectsResource.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("objectType")) {
       objectType = json["objectType"];
@@ -260,10 +245,7 @@ class ActivityObject {
       output["content"] = content;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (objectType != null) {
       output["objectType"] = objectType;
@@ -295,10 +277,7 @@ class ActivityObjectReplies {
   /** Create new ActivityObjectReplies from JSON data */
   ActivityObjectReplies.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Comment.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Comment.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("totalItems")) {
       totalItems = json["totalItems"];
@@ -313,10 +292,7 @@ class ActivityObjectReplies {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (totalItems != null) {
       output["totalItems"] = totalItems;
@@ -347,10 +323,7 @@ class ActivityList {
   /** Create new ActivityList from JSON data */
   ActivityList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Activity.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Activity.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -365,10 +338,7 @@ class ActivityList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -429,11 +399,7 @@ class Badge {
       description = json["description"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -500,10 +466,7 @@ class BadgeList {
   /** Create new BadgeList from JSON data */
   BadgeList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Badge.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Badge.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -515,10 +478,7 @@ class BadgeList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -573,10 +533,7 @@ class Comment {
       kind = json["kind"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("published")) {
       published = json["published"];
@@ -603,10 +560,7 @@ class Comment {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (published != null) {
       output["published"] = published;
@@ -693,10 +647,7 @@ class CommentList {
   /** Create new CommentList from JSON data */
   CommentList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Comment.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Comment.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -714,10 +665,7 @@ class CommentList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -787,10 +735,7 @@ class Community {
       category = json["category"];
     }
     if (json.containsKey("co_owners")) {
-      co_owners = [];
-      json["co_owners"].forEach((item) {
-        co_owners.add(new OrkutAuthorResource.fromJson(item));
-      });
+      co_owners = json["co_owners"].map((co_ownersItem) => new OrkutAuthorResource.fromJson(co_ownersItem)).toList();
     }
     if (json.containsKey("creation_date")) {
       creation_date = json["creation_date"];
@@ -808,10 +753,7 @@ class Community {
       language = json["language"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("location")) {
       location = json["location"];
@@ -820,10 +762,7 @@ class Community {
       member_count = json["member_count"];
     }
     if (json.containsKey("moderators")) {
-      moderators = [];
-      json["moderators"].forEach((item) {
-        moderators.add(new OrkutAuthorResource.fromJson(item));
-      });
+      moderators = json["moderators"].map((moderatorsItem) => new OrkutAuthorResource.fromJson(moderatorsItem)).toList();
     }
     if (json.containsKey("name")) {
       name = json["name"];
@@ -844,10 +783,7 @@ class Community {
       output["category"] = category;
     }
     if (co_owners != null) {
-      output["co_owners"] = new core.List();
-      co_owners.forEach((item) {
-        output["co_owners"].add(item.toJson());
-      });
+      output["co_owners"] = co_owners.map((co_ownersItem) => co_ownersItem.toJson()).toList();
     }
     if (creation_date != null) {
       output["creation_date"] = creation_date;
@@ -865,10 +801,7 @@ class Community {
       output["language"] = language;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (location != null) {
       output["location"] = location;
@@ -877,10 +810,7 @@ class Community {
       output["member_count"] = member_count;
     }
     if (moderators != null) {
-      output["moderators"] = new core.List();
-      moderators.forEach((item) {
-        output["moderators"].add(item.toJson());
-      });
+      output["moderators"] = moderators.map((moderatorsItem) => moderatorsItem.toJson()).toList();
     }
     if (name != null) {
       output["name"] = name;
@@ -911,10 +841,7 @@ class CommunityList {
   /** Create new CommunityList from JSON data */
   CommunityList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Community.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Community.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -926,10 +853,7 @@ class CommunityList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1015,10 +939,7 @@ class CommunityMembersList {
       firstPageToken = json["firstPageToken"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CommunityMembers.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CommunityMembers.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1042,10 +963,7 @@ class CommunityMembersList {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1224,11 +1142,7 @@ class CommunityMessage {
       body = json["body"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("isSpam")) {
       isSpam = json["isSpam"];
@@ -1237,10 +1151,7 @@ class CommunityMessage {
       kind = json["kind"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("subject")) {
       subject = json["subject"];
@@ -1270,10 +1181,7 @@ class CommunityMessage {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (subject != null) {
       output["subject"] = subject;
@@ -1313,10 +1221,7 @@ class CommunityMessageList {
       firstPageToken = json["firstPageToken"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CommunityMessage.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CommunityMessage.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1340,10 +1245,7 @@ class CommunityMessageList {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1488,16 +1390,10 @@ class CommunityPoll {
       lastUpdate = json["lastUpdate"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("options")) {
-      options = [];
-      json["options"].forEach((item) {
-        options.add(new OrkutCommunitypolloptionResource.fromJson(item));
-      });
+      options = json["options"].map((optionsItem) => new OrkutCommunitypolloptionResource.fromJson(optionsItem)).toList();
     }
     if (json.containsKey("question")) {
       question = json["question"];
@@ -1506,10 +1402,7 @@ class CommunityPoll {
       totalNumberOfVotes = json["totalNumberOfVotes"];
     }
     if (json.containsKey("votedOptions")) {
-      votedOptions = [];
-      json["votedOptions"].forEach((item) {
-        votedOptions.add(item);
-      });
+      votedOptions = json["votedOptions"].toList();
     }
   }
 
@@ -1569,16 +1462,10 @@ class CommunityPoll {
       output["lastUpdate"] = lastUpdate;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (options != null) {
-      output["options"] = new core.List();
-      options.forEach((item) {
-        output["options"].add(item.toJson());
-      });
+      output["options"] = options.map((optionsItem) => optionsItem.toJson()).toList();
     }
     if (question != null) {
       output["question"] = question;
@@ -1587,10 +1474,7 @@ class CommunityPoll {
       output["totalNumberOfVotes"] = totalNumberOfVotes;
     }
     if (votedOptions != null) {
-      output["votedOptions"] = new core.List();
-      votedOptions.forEach((item) {
-        output["votedOptions"].add(item);
-      });
+      output["votedOptions"] = votedOptions.toList();
     }
 
     return output;
@@ -1720,10 +1604,7 @@ class CommunityPollCommentList {
       firstPageToken = json["firstPageToken"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CommunityPollComment.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CommunityPollComment.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1747,10 +1628,7 @@ class CommunityPollCommentList {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1799,10 +1677,7 @@ class CommunityPollList {
       firstPageToken = json["firstPageToken"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CommunityPoll.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CommunityPoll.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1826,10 +1701,7 @@ class CommunityPollList {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1872,10 +1744,7 @@ class CommunityPollVote {
       kind = json["kind"];
     }
     if (json.containsKey("optionIds")) {
-      optionIds = [];
-      json["optionIds"].forEach((item) {
-        optionIds.add(item);
-      });
+      optionIds = json["optionIds"].toList();
     }
   }
 
@@ -1890,10 +1759,7 @@ class CommunityPollVote {
       output["kind"] = kind;
     }
     if (optionIds != null) {
-      output["optionIds"] = new core.List();
-      optionIds.forEach((item) {
-        output["optionIds"].add(item);
-      });
+      output["optionIds"] = optionIds.toList();
     }
 
     return output;
@@ -1948,11 +1814,7 @@ class CommunityTopic {
       body = json["body"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("isClosed")) {
       isClosed = json["isClosed"];
@@ -1967,16 +1829,10 @@ class CommunityTopic {
       latestMessageSnippet = json["latestMessageSnippet"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("messages")) {
-      messages = [];
-      json["messages"].forEach((item) {
-        messages.add(new CommunityMessage.fromJson(item));
-      });
+      messages = json["messages"].map((messagesItem) => new CommunityMessage.fromJson(messagesItem)).toList();
     }
     if (json.containsKey("numberOfReplies")) {
       numberOfReplies = json["numberOfReplies"];
@@ -2012,16 +1868,10 @@ class CommunityTopic {
       output["latestMessageSnippet"] = latestMessageSnippet;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (messages != null) {
-      output["messages"] = new core.List();
-      messages.forEach((item) {
-        output["messages"].add(item.toJson());
-      });
+      output["messages"] = messages.map((messagesItem) => messagesItem.toJson()).toList();
     }
     if (numberOfReplies != null) {
       output["numberOfReplies"] = numberOfReplies;
@@ -2064,10 +1914,7 @@ class CommunityTopicList {
       firstPageToken = json["firstPageToken"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CommunityTopic.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CommunityTopic.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -2091,10 +1938,7 @@ class CommunityTopicList {
       output["firstPageToken"] = firstPageToken;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -2128,10 +1972,7 @@ class Counters {
   /** Create new Counters from JSON data */
   Counters.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new OrkutCounterResource.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new OrkutCounterResource.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -2143,10 +1984,7 @@ class Counters {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -2198,10 +2036,7 @@ class OrkutActivityobjectsResource {
       id = json["id"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("objectType")) {
       objectType = json["objectType"];
@@ -2228,10 +2063,7 @@ class OrkutActivityobjectsResource {
       output["id"] = id;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (objectType != null) {
       output["objectType"] = objectType;
@@ -2321,6 +2153,35 @@ class OrkutActivitypersonResource {
 
 }
 
+/** The person's profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields. */
+class OrkutActivitypersonResourceImage {
+
+  /** The URL of the person's profile photo. */
+  core.String url;
+
+  /** Create new OrkutActivitypersonResourceImage from JSON data */
+  OrkutActivitypersonResourceImage.fromJson(core.Map json) {
+    if (json.containsKey("url")) {
+      url = json["url"];
+    }
+  }
+
+  /** Create JSON Object for OrkutActivitypersonResourceImage */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (url != null) {
+      output["url"] = url;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of OrkutActivitypersonResourceImage */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
 /** An object that encapsulates the individual components of a person's name. */
 class OrkutActivitypersonResourceName {
 
@@ -2355,35 +2216,6 @@ class OrkutActivitypersonResourceName {
   }
 
   /** Return String representation of OrkutActivitypersonResourceName */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** The person's profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields. */
-class OrkutActivitypersonResourceImage {
-
-  /** The URL of the person's profile photo. */
-  core.String url;
-
-  /** Create new OrkutActivitypersonResourceImage from JSON data */
-  OrkutActivitypersonResourceImage.fromJson(core.Map json) {
-    if (json.containsKey("url")) {
-      url = json["url"];
-    }
-  }
-
-  /** Create JSON Object for OrkutActivitypersonResourceImage */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (url != null) {
-      output["url"] = url;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of OrkutActivitypersonResourceImage */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -2681,10 +2513,7 @@ class Visibility {
       kind = json["kind"];
     }
     if (json.containsKey("links")) {
-      links = [];
-      json["links"].forEach((item) {
-        links.add(new OrkutLinkResource.fromJson(item));
-      });
+      links = json["links"].map((linksItem) => new OrkutLinkResource.fromJson(linksItem)).toList();
     }
     if (json.containsKey("visibility")) {
       visibility = json["visibility"];
@@ -2699,10 +2528,7 @@ class Visibility {
       output["kind"] = kind;
     }
     if (links != null) {
-      output["links"] = new core.List();
-      links.forEach((item) {
-        output["links"].add(item.toJson());
-      });
+      output["links"] = links.map((linksItem) => linksItem.toJson()).toList();
     }
     if (visibility != null) {
       output["visibility"] = visibility;
@@ -2716,3 +2542,16 @@ class Visibility {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}
