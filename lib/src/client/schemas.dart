@@ -51,7 +51,7 @@ class Acl {
   }
 
   /** Return String representation of Acl */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -88,7 +88,7 @@ class AclItems {
   }
 
   /** Return String representation of AclItems */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -202,7 +202,7 @@ class Activity {
   }
 
   /** Return String representation of Activity */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -258,7 +258,7 @@ class ActivityObject {
   }
 
   /** Return String representation of ActivityObject */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -305,7 +305,7 @@ class ActivityObjectReplies {
   }
 
   /** Return String representation of ActivityObjectReplies */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -351,7 +351,7 @@ class ActivityList {
   }
 
   /** Return String representation of ActivityList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -451,7 +451,7 @@ class Badge {
   }
 
   /** Return String representation of Badge */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -488,7 +488,7 @@ class BadgeList {
   }
 
   /** Return String representation of BadgeList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -570,7 +570,7 @@ class Comment {
   }
 
   /** Return String representation of Comment */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -626,7 +626,7 @@ class CommentInReplyTo {
   }
 
   /** Return String representation of CommentInReplyTo */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -681,7 +681,7 @@ class CommentList {
   }
 
   /** Return String representation of CommentList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -826,7 +826,7 @@ class Community {
   }
 
   /** Return String representation of Community */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -863,7 +863,7 @@ class CommunityList {
   }
 
   /** Return String representation of CommunityList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -909,7 +909,7 @@ class CommunityMembers {
   }
 
   /** Return String representation of CommunityMembers */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -982,7 +982,7 @@ class CommunityMembersList {
   }
 
   /** Return String representation of CommunityMembersList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1100,7 +1100,7 @@ class CommunityMembershipStatus {
   }
 
   /** Return String representation of CommunityMembershipStatus */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1191,7 +1191,7 @@ class CommunityMessage {
   }
 
   /** Return String representation of CommunityMessage */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1264,7 +1264,7 @@ class CommunityMessageList {
   }
 
   /** Return String representation of CommunityMessageList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1481,7 +1481,7 @@ class CommunityPoll {
   }
 
   /** Return String representation of CommunityPoll */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1510,7 +1510,7 @@ class CommunityPollImage {
   }
 
   /** Return String representation of CommunityPollImage */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1574,7 +1574,7 @@ class CommunityPollComment {
   }
 
   /** Return String representation of CommunityPollComment */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1647,7 +1647,7 @@ class CommunityPollCommentList {
   }
 
   /** Return String representation of CommunityPollCommentList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1720,7 +1720,7 @@ class CommunityPollList {
   }
 
   /** Return String representation of CommunityPollList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1766,7 +1766,7 @@ class CommunityPollVote {
   }
 
   /** Return String representation of CommunityPollVote */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1884,7 +1884,7 @@ class CommunityTopic {
   }
 
   /** Return String representation of CommunityTopic */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1957,7 +1957,7 @@ class CommunityTopicList {
   }
 
   /** Return String representation of CommunityTopicList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1994,7 +1994,7 @@ class Counters {
   }
 
   /** Return String representation of Counters */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2076,7 +2076,7 @@ class OrkutActivityobjectsResource {
   }
 
   /** Return String representation of OrkutActivityobjectsResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2149,7 +2149,7 @@ class OrkutActivitypersonResource {
   }
 
   /** Return String representation of OrkutActivitypersonResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2178,7 +2178,7 @@ class OrkutActivitypersonResourceImage {
   }
 
   /** Return String representation of OrkutActivitypersonResourceImage */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2216,7 +2216,7 @@ class OrkutActivitypersonResourceName {
   }
 
   /** Return String representation of OrkutActivitypersonResourceName */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2271,7 +2271,7 @@ class OrkutAuthorResource {
   }
 
   /** Return String representation of OrkutAuthorResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2300,7 +2300,7 @@ class OrkutAuthorResourceImage {
   }
 
   /** Return String representation of OrkutAuthorResourceImage */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2355,7 +2355,7 @@ class OrkutCommunitypolloptionResource {
   }
 
   /** Return String representation of OrkutCommunitypolloptionResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2384,7 +2384,7 @@ class OrkutCommunitypolloptionResourceImage {
   }
 
   /** Return String representation of OrkutCommunitypolloptionResourceImage */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2434,7 +2434,7 @@ class OrkutCounterResource {
   }
 
   /** Return String representation of OrkutCounterResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2490,7 +2490,7 @@ class OrkutLinkResource {
   }
 
   /** Return String representation of OrkutLinkResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2538,7 +2538,7 @@ class Visibility {
   }
 
   /** Return String representation of Visibility */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 

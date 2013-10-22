@@ -2,7 +2,7 @@ library orkut_v2_api.browser;
 
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-import 'package:google_orkut_v2_api/src/cloud_api_browser.dart';
+import 'package:google_orkut_v2_api/src/browser_client.dart';
 import "package:google_orkut_v2_api/orkut_v2_api_client.dart";
 
 /** Lets you manage activities, comments and badges in Orkut. More stuff coming in time. */
